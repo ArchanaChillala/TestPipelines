@@ -5,7 +5,7 @@ pipeline {
 	      ANOTHER_PET = 'plants'
     }
     parameters {
-	string(name: 'PERSON', defaultValue: 'Archana Chillala', description: 'The person who's writing this piece of code")
+	string(name: 'PERSON', defaultValue: 'Archana Chillala', description: 'The person who's writing this piece of code')
     }
     stages {
         stage('build') {
