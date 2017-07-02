@@ -14,6 +14,11 @@ pipeline {
                		 '''
             	}
         }
+	stage('Sanity Check') {
+		steps {
+			input "Do you want to continue?"
+		}
+	}
 	stage('Show Env Vars') {
 		steps {
 			sh 'echo $MY_PET'
