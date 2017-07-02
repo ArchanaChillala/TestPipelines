@@ -4,6 +4,9 @@ pipeline {
 	      MY_PET = 'peppa'
 	      ANOTHER_PET = 'plants'
     }
+    parameters {
+	string(name: 'PERSON', defaultValue: 'Archana Chillala', description: 'The person who's writing this piece of code")
+    }
     stages {
         stage('build') {
 		    steps {
@@ -14,6 +17,11 @@ pipeline {
                		 '''
             	}
         }
+	stage('Test Parameters') {
+		steps {
+			echo "Hello ${params.PERSON}"
+		}
+	}
 	stage('Sanity Check') {
 		steps {
 			input "Do you want to continue?"
